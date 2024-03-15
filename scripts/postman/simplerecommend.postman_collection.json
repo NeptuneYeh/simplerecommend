@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "7f21b8d9-7b32-4fcd-bc4d-3416c23d7df9",
+		"name": "simplerecommend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4449169"
+	},
+	"item": [
+		{
+			"name": "CreateAccount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"AlexYeh\",\n    \"email\": \"alex554833_12@gmail.com\",\n    \"password\": \"@Ac605329\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoginAccount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"alex554833@gmail.com\",\n    \"password\": \"@Ac605329\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/account/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListRecommendProducts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "v2.local.cKZK81lW3qHQycq2k8uu15zK_JYPw-iNGWKutsfapn5zbb3HZMwpwIIseIuvv67SEpzskQAEt1oKHWg6PMBAq4DfY9WD_Hm8E0Fi0lUpXGBsibxoxpjxqy8JDBXeEgpyk4PdfLyX3Tj2vO4RFiI6xrsseh6ZrqTB-F19j2lnyf2bMKVpqep6j3v2adwFZ_EVbOeuJNRvCldD0jCw5twgfpqqEHdCdRPg2_R4W_wzRFggS02gk7sd-bLkWbrkS1zE8q4rrXCCXA.bnVsbA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/recommendation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recommendation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VerifyEmail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/account/verify/email?code=d98c38c6-7071-4bb1-b4e2-a318d74b5789",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"verify",
+						"email"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "d98c38c6-7071-4bb1-b4e2-a318d74b5789"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
